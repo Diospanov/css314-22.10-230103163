@@ -1,0 +1,26 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Tasks: 10000
+Task: FNV-1a of a 1024-byte block, 500 rounds
+Seed: 230103163
+Cores in the pool-size list are logical cores.
+Requested pools: 1, Cores/2, Cores, Cores * 2, Cores * 4, Cores * 16, 256
+Cores * 16 and 256 are the same pool, so that size is measured once.
+Pool sizes: 1, 8, 16, 32, 64, 256
+Repeats: 3 (median after one warmup)
+Threshold rule: first pool after the fastest run whose execution time increases.
+
+Pool Size | Execution Time (ms) |   Speedup relative to 1 thread | Status
+-------------------------------------------------------------------------
+        1 |           12719.195 |                          1.000 | baseline
+        8 |            1417.707 |                          8.972 | scaling
+       16 |             846.084 |                         15.033 | scaling
+       32 |             844.019 |                         15.070 | best
+       64 |             880.777 |                         14.441 | threshold
+      256 |            2464.089 |                          5.162 | oversubscribed
+
+Context-switch threshold: pool size 64.
+Execution time starts worsening there from OS thread context switching.
