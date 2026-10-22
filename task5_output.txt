@@ -1,0 +1,32 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Parallel workers: 16
+Operation: y[i] = 2.5 * x[i] + (-1.25)
+Parallel pool: persistent threads, timed section is dispatch plus saxpy
+
+Required sizes
+         N |  Serial (ms) |  Parallel (ms) |  Speedup | Parallel
+----------------------------------------------------------------
+       100 |       0.0040 |         0.2039 |    0.020 |   SLOWER
+      1000 |       0.0056 |         0.2018 |    0.028 |   SLOWER
+     10000 |       0.0196 |         0.5933 |    0.033 |   SLOWER
+    100000 |       0.6753 |         0.7984 |    0.846 |   SLOWER
+   1000000 |       6.0955 |         3.8220 |    1.595 |   FASTER
+  10000000 |      64.0327 |        23.2296 |    2.757 |   FASTER
+
+Refined sizes inside the required-size bracket
+         N |  Serial (ms) |  Parallel (ms) |  Speedup | Parallel
+----------------------------------------------------------------
+    138950 |       0.9180 |         1.1438 |    0.803 |   SLOWER
+    193070 |       1.1941 |         1.2732 |    0.938 |   SLOWER
+    268270 |       1.7247 |         1.5417 |    1.119 |   FASTER
+    372759 |       2.2186 |         1.6459 |    1.348 |   FASTER
+    517947 |       3.1011 |         2.2901 |    1.354 |   FASTER
+    719686 |       4.3951 |         2.5050 |    1.754 |   FASTER
+
+Crossover range: multi-threading shifts from SLOWER than serial to FASTER than serial for N in (193070, 268270).
+Measured N <= 193070 are SLOWER.
+Measured N >= 268270 are FASTER.
