@@ -1,0 +1,19 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Threads: 8
+Increments per thread: 1000000
+Total operations: 8000000
+Primitive 1: threading.Lock (OS mutex)
+Primitive 2: LLVM cmpxchg retry loop (hardware CAS spin)
+
+Mutex final value: 8000000
+Atomic CAS final value: 8000000
+
+Mutex Execution Time (ms): 1782.884
+Mutex Throughput (ops/sec): 4487111.390
+Atomic CAS Execution Time (ms): 427.807
+Atomic CAS Throughput (ops/sec): 18700008.158
+Throughput Ratio (CAS / Mutex): 4.167
