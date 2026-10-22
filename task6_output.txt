@@ -1,0 +1,19 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Threads: 4
+Increments per thread: 2000000
+Expected final value: 8000000
+
+Unsynchronized counter
+Actual final value: 3939750
+Updates lost: 4060250
+Percentage of updates lost: 50.753%
+Wall time (ms): 2.099
+
+Locked counter
+Actual final value: 8000000
+Wall time (ms): 1903.171
+Lock time penalty (ms): 1901.072
