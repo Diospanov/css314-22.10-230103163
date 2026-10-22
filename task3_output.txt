@@ -1,0 +1,14 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Physical cores: 12
+Logical cores: 16
+Worker threads: 12
+Iterations per thread: 50000000
+shared_counts length: 12
+Padding stride: 64 bytes
+
+Unpadded Shared (ms): 8708.317
+Padded/Local (ms): 589.783
+Execution ratio (unpadded / padded): 14.765
