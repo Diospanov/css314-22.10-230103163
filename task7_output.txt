@@ -1,0 +1,26 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Array length: 30000000
+Kernel A: B[i] = A[i]
+Kernel B: B[i] = sin(A[i]) * cos(A[i]) + tan(A[i])
+Efficiency = Speedup / Cores
+
+Kernel A (memory-bound copy)
+Cores |    Wall (ms) |  Speedup | Efficiency
+--------------------------------------------
+    1 |       19.613 |    1.000 |      1.000
+    2 |       13.679 |    1.434 |      0.717
+   16 |       11.466 |    1.711 |      0.107
+
+Kernel B (compute-bound trig)
+Cores |    Wall (ms) |  Speedup | Efficiency
+--------------------------------------------
+    1 |      705.138 |    1.000 |      1.000
+    2 |      324.456 |    2.173 |      1.087
+   16 |       70.898 |    9.946 |      0.622
+
+Kernel A (memory-bound vector copy) stalled in scaling due to memory channel saturation.
+Efficiency at 16 cores: Kernel A 0.107, Kernel B 0.622.
