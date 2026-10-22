@@ -1,0 +1,19 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Dtype: float64
+Seed: 230103163
+Sizes: 100000, 1000000, 10000000
+Path A: multiprocessing.Pipe, array pickled on send
+Path B: shared_memory zero-copy; timed section is the ready/done handshake
+Repeats: 5 (median after one warmup)
+
+         N |  Payload (bytes) |  Path A (ms) |  Path B (ms) |    A / B
+----------------------------------------------------------------------
+    100000 |           800000 |        2.233 |        0.054 |   41.575
+   1000000 |          8000000 |       18.318 |        0.104 |  176.301
+  10000000 |         80000000 |      193.453 |        0.054 | 3602.475
+
+Path A copies every element through the pipe. Path B only exchanges a small ready/done message, because both processes already map the same buffer.
