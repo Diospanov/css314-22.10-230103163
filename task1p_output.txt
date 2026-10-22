@@ -1,0 +1,19 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Physical cores: 12
+Worker threads: 12
+Matrix shape: 8000 x 8000
+Dtype: float64
+Seed: 230103163
+Mode A: row slices, inner loop across contiguous columns
+Mode B: column slices, inner loop across rows (strided)
+Repeats: 3 (median after one warmup)
+
+Mode A (Row-Major) runtime (ms): 13.285
+Mode B (Column-Major) runtime (ms): 219.795
+Cache penalty factor: 16.545
+Reference sum: 31996957.6158407815
+Mode B steps across rows, so each load skips to a new cache line while Mode A consumes a full line before moving on.
