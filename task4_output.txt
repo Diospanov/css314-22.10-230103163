@@ -1,0 +1,35 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Items: 1000
+Workers: 4
+Item cost: sleep(0.0001 * (i % 20))
+Dynamic chunk size: 5
+
+Static block cost units (sum of i % 20):
+Worker 0: indices 0-249, cost units 2325
+Worker 1: indices 250-499, cost units 2425
+Worker 2: indices 500-749, cost units 2325
+Worker 3: indices 750-999, cost units 2425
+
+Strategy A: Static chunks
+Wall time (ms): 354.639
+First thread finish (ms): 342.622
+Last thread finish (ms): 354.639
+Completion delta (ms): 12.017
+Worker 0: finish 345.043 ms, items 250
+Worker 1: finish 354.639 ms, items 250
+Worker 2: finish 342.622 ms, items 250
+Worker 3: finish 346.448 ms, items 250
+
+Strategy B: Work stealing
+Wall time (ms): 341.002
+First thread finish (ms): 336.310
+Last thread finish (ms): 341.002
+Completion delta (ms): 4.691
+Worker 0: finish 337.610 ms, items 255
+Worker 1: finish 336.310 ms, items 245
+Worker 2: finish 341.002 ms, items 255
+Worker 3: finish 337.421 ms, items 245
