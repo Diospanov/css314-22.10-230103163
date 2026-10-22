@@ -1,0 +1,25 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Threads: 4
+Samples: 40000000
+Samples per thread: 10000000
+Shared PRNG seed: 230103163
+Independent PRNG seed: (Student_ID * 10) + thread_index
+Independent seeds: 2301031630, 2301031631, 2301031632, 2301031633
+Shared guard: spin mutex around each generator draw
+
+Shared PRNG
+Computed pi: 3.1409951000
+Absolute error: 0.0005975536
+Wall time (ms): 4904.298
+
+Independent PRNG
+Computed pi: 3.1418702000
+Absolute error: 0.0002775464
+Wall time (ms): 65.636
+
+Speedup factor: 74.720
+Removing the mutex lets each thread keep its own generator state, so the four draws no longer wait on one lock.
