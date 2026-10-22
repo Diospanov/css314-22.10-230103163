@@ -1,0 +1,11 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Array length: 20000000
+Dtype: float64
+Seed: 230103163
+Sum: 9999187.0722340997
+Standard deviation: 0.2886871574
+Wall-clock time (ms): 221.327
