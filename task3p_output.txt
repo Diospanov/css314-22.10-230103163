@@ -1,0 +1,20 @@
+Student ID: 230103163
+OS: Windows 10
+Platform: Windows-10-10.0.26200-SP0
+CPU model: 12th Gen Intel(R) Core(TM) i5-12500H
+Logical cores: 16
+Physical cores: 12
+Worker threads: 12
+Array length: 2000000
+Dtype: int64
+Value range: 1 to 10
+Seed: 230103163
+Serial: output[i] = output[i - 1] + input[i]
+Parallel: local chunk scan, exclusive offset reduction, add offsets
+Repeats: 10 (median after one warmup)
+
+Serial Time (ms) | Parallel Time (ms) | Speedup | Verification Status (PASS/FAIL)
+---------------------------------------------------------------------------------
+           2.170 |              2.462 |   0.882 | PASS
+
+The offset pass moves the array a second time, and that extra work outweighs the shorter per-chunk dependency chain.
